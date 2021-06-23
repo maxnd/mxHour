@@ -1,7 +1,7 @@
 object fmcopyright: Tfmcopyright
   Left = 715
   Height = 426
-  Top = 344
+  Top = 343
   Width = 580
   ActiveControl = bnOK
   AlphaBlend = True
@@ -2499,8 +2499,8 @@ object fmcopyright: Tfmcopyright
     Left = 176
     Height = 16
     Top = 103
-    Width = 183
-    Caption = 'Visit the website of mxClock'
+    Width = 179
+    Caption = 'Visit the website of mxHour'
     Font.Color = 16107898
     Font.Style = [fsBold, fsUnderline]
     ParentColor = False

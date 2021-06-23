@@ -23,7 +23,7 @@ msgid "Copyright Massimo Nardello, Modena (Italy) 2021"
 msgstr ""
 
 #: tfmcopyright.sttext4.caption
-msgid "Visit the website of mxClock"
+msgid "Visit the website of mxHour"
 msgstr "Visita il sito di mxHour"
 
 #: tfmmain.caption

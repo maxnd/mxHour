@@ -8,7 +8,8 @@
         <Filename Value="mxhour.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos Y="19"/>
+        <TopLine Value="27"/>
+        <CursorPos X="22" Y="44"/>
         <UsageCount Value="41"/>
       </Unit0>
       <Unit1>
@@ -20,7 +21,7 @@
         <UnitName Value="Unit1"/>
         <IsVisibleTab Value="True"/>
         <TopLine Value="267"/>
-        <CursorPos X="15" Y="272"/>
+        <CursorPos X="33" Y="271"/>
         <UsageCount Value="41"/>
         <Bookmarks Count="2">
           <Item0 Y="343" ID="3"/>
