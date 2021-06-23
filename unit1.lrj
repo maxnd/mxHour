@@ -1,0 +1,13 @@
+{"version":1,"strings":[
+{"hash":32,"name":"tfmmain.caption","sourcebytes":[32],"value":" "},
+{"hash":3420464,"name":"tfmmain.lbhour.caption","sourcebytes":[49,48,46,48,48],"value":"10.00"},
+{"hash":134789012,"name":"tfmmain.micopyright.caption","sourcebytes":[67,111,112,121,114,105,103,104,116],"value":"Copyright"},
+{"hash":102787922,"name":"tfmmain.mistart.caption","sourcebytes":[83,116,97,114,116,32,116,105,109,101,114],"value":"Start timer"},
+{"hash":102910466,"name":"tfmmain.mireset.caption","sourcebytes":[82,101,115,101,116,32,116,105,109,101,114],"value":"Reset timer"},
+{"hash":261596549,"name":"tfmmain.mibig.caption","sourcebytes":[66,105,103,32,115,105,122,101],"value":"Big size"},
+{"hash":129174069,"name":"tfmmain.minormal.caption","sourcebytes":[78,111,114,109,97,108,32,115,105,122,101],"value":"Normal size"},
+{"hash":48383109,"name":"tfmmain.mismall.caption","sourcebytes":[83,109,97,108,108,32,115,105,122,101],"value":"Small size"},
+{"hash":98494078,"name":"tfmmain.micolor.caption","sourcebytes":[67,104,97,110,103,101,32,104,111,117,114,32,99,111,108,111,114,46,46,46],"value":"Change hour color..."},
+{"hash":109902894,"name":"tfmmain.micolback.caption","sourcebytes":[67,104,97,110,103,101,32,98,97,99,107,103,114,111,117,110,100,32,99,111,108,111,114,46,46,46],"value":"Change background color..."},
+{"hash":363524,"name":"tfmmain.miquit.caption","sourcebytes":[81,117,105,116],"value":"Quit"}
+]}

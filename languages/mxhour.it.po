@@ -1,0 +1,77 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: tfmcopyright.bnok.caption
+msgid "OK"
+msgstr ""
+
+#: tfmcopyright.caption
+msgctxt "tfmcopyright.caption"
+msgid "Copyright"
+msgstr ""
+
+#: tfmcopyright.sttext1.caption
+msgid "mxHour 1.0"
+msgstr ""
+
+#: tfmcopyright.sttext2.caption
+msgid "A free software to know what time is it"
+msgstr "Un software libero per sapere che ore sono"
+
+#: tfmcopyright.sttext3.caption
+msgid "Copyright Massimo Nardello, Modena (Italy) 2021"
+msgstr ""
+
+#: tfmcopyright.sttext4.caption
+msgid "Visit the website of mxClock"
+msgstr "Visita il sito di mxHour"
+
+#: tfmmain.caption
+msgid " "
+msgstr ""
+
+#: tfmmain.lbhour.caption
+msgid "10.00"
+msgstr ""
+
+#: tfmmain.mibig.caption
+msgid "Big size"
+msgstr "Dimensione grande"
+
+#: tfmmain.micolback.caption
+msgid "Change background color..."
+msgstr "Cambia il colore di sfondo..."
+
+#: tfmmain.micolor.caption
+msgid "Change hour color..."
+msgstr "Cambia il colore dell'ora"
+
+#: tfmmain.micopyright.caption
+msgctxt "tfmmain.micopyright.caption"
+msgid "Copyright"
+msgstr ""
+
+#: tfmmain.minormal.caption
+msgid "Normal size"
+msgstr "Dimensione normale"
+
+#: tfmmain.miquit.caption
+msgid "Quit"
+msgstr "Esci"
+
+#: tfmmain.mireset.caption
+msgid "Reset timer"
+msgstr "Azzera il timer"
+
+#: tfmmain.mismall.caption
+msgid "Small size"
+msgstr "Dimensione piccola"
+
+#: tfmmain.mistart.caption
+msgid "Start timer"
+msgstr "Attiva il timer"
+
+#: unit1.dateformat
+msgid "en"
+msgstr "it"
+
