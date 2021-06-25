@@ -22,27 +22,32 @@
 unit Unit1;
 
 {$mode objfpc}{$H+}
-{$modeswitch objectivec1}
+{$ifdef Darwin} {$modeswitch objectivec1} {$endif}
 
 interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  Menus, Types, IniFiles, CocoaAll, CocoaUtils, LazUTF8, LazFileUtils,
-  DefaultTranslator;
+  Menus, Types, IniFiles, LazUTF8, LazFileUtils, DefaultTranslator
+  {$ifdef Windows} , windows {$endif}
+  {$ifdef Darwin} , CocoaAll, CocoaUtils {$endif};
 
-const
-  NSWindowTitleVisible = 0;
-  NSWindowTitleHidden = 1;
+  {$ifdef Darwin}
+    const
+      NSWindowTitleVisible = 0;
+      NSWindowTitleHidden = 1;
+  {$endif}
 
-type
-  NSWindowTitleVisibility = NSInteger;
-  NSWindowGlam = objccategory external (NSWindow)
-    function titleVisibility: NSWindowTitleVisibility; message 'titleVisibility';
-    procedure setTitleVisibility(AVisibility: NSWindowTitleVisibility); message 'setTitleVisibility:';
-    function titlebarAppearsTransparent: Boolean; message 'titlebarAppearsTransparent';
-    procedure setTitlebarAppearsTransparent(AFlag: Boolean); message 'setTitlebarAppearsTransparent:';
-  end;
+  type
+    {$ifdef Darwin}
+      NSWindowTitleVisibility = NSInteger;
+      NSWindowGlam = objccategory external (NSWindow)
+        function titleVisibility: NSWindowTitleVisibility; message 'titleVisibility';
+        procedure setTitleVisibility(AVisibility: NSWindowTitleVisibility); message 'setTitleVisibility:';
+        function titlebarAppearsTransparent: Boolean; message 'titlebarAppearsTransparent';
+        procedure setTitlebarAppearsTransparent(AFlag: Boolean); message 'setTitlebarAppearsTransparent:';
+    end;
+    {$endif}
 
   { TfmMain }
 
@@ -119,6 +124,7 @@ uses Unit2;
 procedure TfmMain.FormCreate(Sender: TObject);
 var
   MyIni: TIniFile;
+  Style: Longint;
 begin
   fmMain.Width := 375;
   fmMain.Height := 150;
@@ -126,8 +132,14 @@ begin
   begin
     fmMain.Width := 575;
   end;
-  myHomeDir := GetUserDir + 'Library/Preferences/';
-  myConfigFile := 'mxhour.plist';
+  {$ifdef Darwin}
+    myHomeDir := GetUserDir + 'Library/Preferences/';
+    myConfigFile := 'mxhour.plist';
+  {$endif}
+  {$ifdef Windows}
+    myHomeDir := GetUserDir + 'AppData\Local\mxHour\';
+    myConfigFile := 'mxhour.ini';
+  {$endif}
   if DirectoryExists(myHomeDir) = False then
   begin
     CreateDirUTF8(myHomeDir);
@@ -150,17 +162,31 @@ begin
       MyIni.Free;
     end;
   end;
+  {$ifdef Windows}
+  miQuit.ShortCut := 16465;
+  {$endif}
+  {$ifdef Darwin}
+  miQuit.ShortCut := 4123;
+  {$endif}
   SetHour;
 end;
 
 procedure TfmMain.FormShow(Sender: TObject);
-var
-  myWin :NSWindow;
+  {$ifdef Darwin}
+  var
+    myWin :NSWindow;
+  {$endif}
 begin
+  {$ifdef Darwin}
   myWin := NSView(Self.Handle).window;
   myWin.setTitlebarAppearsTransparent(True);
   myWin.setTitleVisibility(NSWindowTitleHidden);
   myWin.setBackgroundColor(ColorToNSColor(clBack));
+  {$endif}
+  {$ifdef Windows}
+  fmMain.Color := clWhite;
+  miColBack.Visible := False;
+  {$endif}
 end;
 
 procedure TfmMain.FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -184,6 +210,7 @@ end;
 procedure TfmMain.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
   );
 begin
+  {$ifdef Darwin}
   if ((key = 27) and (ssMeta in Shift)) then
   begin
     Close;
@@ -192,6 +219,17 @@ begin
   begin
     key := 0;
   end;
+  {$endif}
+  {$ifdef Windows}
+  if ((key = Ord('Q')) and (ssCtrl in Shift)) then
+  begin
+    Close;
+  end
+  else
+  begin
+    key := 0;
+  end;
+  {$endif}
 end;
 
 procedure TfmMain.FormResize(Sender: TObject);
@@ -218,6 +256,9 @@ begin
   begin
     fmMain.Left := fmMain.Left + (X - PX);
     fmMain.Top := fmMain.Top + (Y - PY);
+    {$ifdef Windows}
+    Refresh;
+    {$endif}
   end;
 end;
 
@@ -333,15 +374,19 @@ begin
 end;
 
 procedure TfmMain.tmTimerTimer(Sender: TObject);
-var
-  myWin :NSWindow;
+  {$ifdef Darwin}
+  var
+    myWin :NSWindow;
+  {$endif}
 begin
   SetHour;
+  {$ifdef Darwin}
   myWin := NSView(Self.Handle).window;
   if myWin.isOnActiveSpace = False then
   begin
     myWin.orderFront(nil);
   end;
+  {$endif}
 end;
 
 procedure TfmMain.SetHour;

@@ -27,7 +27,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  CocoaThemes, LCLIntf;
+  LCLIntf {$ifdef Darwin}, CocoaThemes{$endif};
 
 type
 
@@ -77,6 +77,13 @@ begin
    rmCopyrightText.Lines.Add('');
    rmCopyrightText.Lines.Add('This software has been written with Lazarus. ' +
    'The icon has been taken from https://icon-icons.com/icon/gnome-schedule/94438.');
+   {$ifdef Windows}
+   fmcopyright.Color := clWhite;
+   stText1.Font.Color := clBlue;
+   stText2.Font.Color := clBlue;
+   stText3.Font.Color := clBlue;
+   stText4.Font.Color := clBlue;
+   {$endif}
 end;
 
 procedure Tfmcopyright.bnOKClick(Sender: TObject);
@@ -96,6 +103,7 @@ end;
 
 procedure Tfmcopyright.FormShow(Sender: TObject);
 begin
+  {$ifdef Darwin}
   if IsPaintDark = True then
   begin
     rmCopyrightText.Font.Color := clWhite;
@@ -104,6 +112,7 @@ begin
   begin
     rmCopyrightText.Font.Color := clBlack;
   end;
+  {$endif}
 end;
 
 procedure Tfmcopyright.stText4Click(Sender: TObject);

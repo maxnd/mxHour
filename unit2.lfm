@@ -2134,7 +2134,7 @@ object fmcopyright: Tfmcopyright
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '2.0.12.0'
+  LCLVersion = '2.0.6.0'
   object imImage: TImage
     Left = 30
     Height = 128
@@ -2443,9 +2443,9 @@ object fmcopyright: Tfmcopyright
   end
   object stText1: TLabel
     Left = 176
-    Height = 53
+    Height = 61
     Top = 0
-    Width = 237
+    Width = 249
     Caption = 'mxHour 1.0'
     Font.Color = 16107898
     Font.Height = -45
@@ -2455,9 +2455,9 @@ object fmcopyright: Tfmcopyright
   end
   object stText2: TLabel
     Left = 176
-    Height = 18
+    Height = 21
     Top = 56
-    Width = 296
+    Width = 293
     Caption = 'A free software to know what time is it'
     Font.Color = 16107898
     Font.Height = -16
@@ -2470,7 +2470,6 @@ object fmcopyright: Tfmcopyright
     Height = 216
     Top = 144
     Width = 520
-    Lines.Strings = (    )
     ReadOnly = True
     TabOrder = 1
   end
@@ -2485,9 +2484,9 @@ object fmcopyright: Tfmcopyright
   end
   object stText3: TLabel
     Left = 176
-    Height = 16
+    Height = 15
     Top = 81
-    Width = 320
+    Width = 272
     Caption = 'Copyright Massimo Nardello, Modena (Italy) 2021'
     Font.Color = 16107898
     Font.Style = [fsBold]
@@ -2497,9 +2496,9 @@ object fmcopyright: Tfmcopyright
   object stText4: TLabel
     Cursor = crHandPoint
     Left = 176
-    Height = 16
+    Height = 15
     Top = 103
-    Width = 179
+    Width = 157
     Caption = 'Visit the website of mxHour'
     Font.Color = 16107898
     Font.Style = [fsBold, fsUnderline]

@@ -847,6 +847,7 @@ object fmMain: TfmMain
     0000000000000000000000000014B0FF004F0E6F02D68A7F930000000049454E
     44AE426082
   }
+  KeyPreview = True
   OnClose = FormClose
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
@@ -858,7 +859,7 @@ object fmMain: TfmMain
   OnShow = FormShow
   PopupMenu = pmMenu
   ShowInTaskBar = stNever
-  LCLVersion = '2.0.12.0'
+  LCLVersion = '2.0.6.0'
   object lbHour: TLabel
     Left = 0
     Height = 122
@@ -900,13 +901,13 @@ object fmMain: TfmMain
   end
   object tmTimer: TTimer
     OnTimer = tmTimerTimer
-    Left = 240
-    Top = 48
+    left = 240
+    top = 48
   end
   object pmMenu: TPopupMenu
     OnPopup = pmMenuPopup
-    Left = 130
-    Top = 43
+    left = 130
+    top = 43
     object miCopyright: TMenuItem
       Caption = 'Copyright'
       OnClick = miCopyrightClick
@@ -951,7 +952,7 @@ object fmMain: TfmMain
     end
     object miQuit: TMenuItem
       Caption = 'Quit'
-      ShortCut = 4123
+      ShortCut = 16465
       OnClick = miQuitClick
     end
   end
@@ -979,7 +980,7 @@ object fmMain: TfmMain
       'ColorS=F0FBFF'
       'ColorT=A4A0A0'
     )
-    Left = 47
-    Top = 41
+    left = 47
+    top = 41
   end
 end

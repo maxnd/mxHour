@@ -28,10 +28,10 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Unit1, Unit2,
+  Forms, Unit1, Unit2
   {$IFDEF Darwin}
-    clocale, iosxlocale;
-  {$ENDIF}
+    , clocale, iosxlocale
+  {$ENDIF};
 
 
 {$R *.res}
